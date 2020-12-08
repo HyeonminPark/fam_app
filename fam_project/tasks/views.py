@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
 from .models import *
@@ -6,6 +7,7 @@ from .forms import *
 
 # Create your views here.
 
+@login_required
 def index(request):
     tasks = Task.objects.all()
 
@@ -20,6 +22,7 @@ def index(request):
     context = {'tasks':tasks, 'form':form}
     return render(request, 'tasks/list.html', context)
 
+@login_required
 def update(request, pk):
     task = Task.objects.get(id=pk)
 
@@ -34,6 +37,7 @@ def update(request, pk):
     context = {'form':form}
     return render(request, 'tasks/update.html', context)
 
+@login_required
 def delete(request, pk):
     item = Task.objects.get(id=pk)
 

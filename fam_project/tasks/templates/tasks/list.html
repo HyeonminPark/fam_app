@@ -39,6 +39,9 @@
 	.head {
 	    text-align: center;
 	}
+	.left {
+	    text-align: right;
+	}
 	.done {
 	    color: #ff6a19
 	}
@@ -47,6 +50,18 @@
 	}
 
 </style>
+
+<div class="center-column left">
+    {% if user.is_authenticated %}
+        <p class="space"><b>{{ user.username }}</b>
+            <a href="{% url 'logout' %}">Log out</a>
+        </p>
+    {% else %}
+        <a class="space" href="{% url 'login' %}">LogIn</a>
+        <a href="{% url 'register'%}">Register</a>
+    {% endif %}
+
+</div>
 
 <div class="center-column">
 
