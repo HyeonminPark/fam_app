@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: OpenShift Action
-      uses: redhat-developer/openshift-actions@v2
+      uses: redhat-developer/openshift-actions@v1.1
       with:
         version: 'latest'
         openshift_server_url: ${{ secrets.OPENSHIFT_SERVER_URL }}
