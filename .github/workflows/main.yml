@@ -8,7 +8,7 @@
 # - Perform a Docker build
 # - Push the built image to an image registry
 # - Log in to your OpenShift cluster
-# - Create an OpenShift app from the image and expose it to the internet.
+# - Create an OpenShift app from the image and expose it to the internet
 
 ### Before you begin:
 # - Have write access to a container image registry such as quay.io or Dockerhub.
